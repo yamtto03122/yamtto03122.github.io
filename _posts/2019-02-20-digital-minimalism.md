@@ -26,15 +26,15 @@ last_modified_at: 2023-06-13
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 
 ``` python
-{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
+  {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 ```
 
 ## 3. Figures
 
 ![alt text](https://bit.ly/2TOsM7B "Building Image")
 
-```
-![alt text](https://bit.ly/2TOsM7B "Building Image")
+``` markdown
+  ![대체 텍스트(alt)](이미지_소스_URL "이미지 설명(title)")
 ```
 
 ## 4. Carousel
@@ -45,14 +45,10 @@ https://bit.ly/2DOtxXB
 {% endcapture %}
 {% include elements/carousel.html %}
 
-``` python
-<pre>
-<code>
-{% capture carousel_images %}
-https://bit.ly/2BBbVhc
-https://bit.ly/2DOtxXB
-{% endcapture %}
-{% include elements/carousel.html %}
-</code>
-</pre>
+``` json
+  {% capture carousel_images %}
+  https://bit.ly/2BBbVhc
+  https://bit.ly/2DOtxXB
+  {% endcapture %}
+  {% include elements/carousel.html %}
 ```
