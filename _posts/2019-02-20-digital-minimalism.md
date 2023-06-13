@@ -8,6 +8,7 @@ toc: true
 toc_sticky: true
 date: 2023-06-13
 last_modified_at: 2023-06-13
+render_with_liquid: false
 ---
 
 출처: [Nikhil Thota](https://medium.com/@nikhilthota/digital-minimalism-ac083064b4e4)
@@ -25,8 +26,8 @@ last_modified_at: 2023-06-13
 
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 
-``` python
-  {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
+```
+{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 ```
 
 ## 3. Figures
@@ -46,11 +47,9 @@ https://bit.ly/2DOtxXB
 {% include elements/carousel.html %}
 
 ``` 
-{% raw %}
-{% capture carousel_images %}
+{% raw %}{% capture carousel_images %}
 https://bit.ly/2BBbVhc
 https://bit.ly/2DOtxXB
 {% endcapture %}
-{% include elements/carousel.html %}
-{% endraw %}
+{% include elements/carousel.html %}{% endraw %}
 ```
