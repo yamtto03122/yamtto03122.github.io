@@ -54,5 +54,5 @@ https://bit.ly/2DOtxXB
 {% endcapture %}
 {% include elements/carousel.html %}
 </code>
-<pre>
+</pre>
 ```
