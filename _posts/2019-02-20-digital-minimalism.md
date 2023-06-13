@@ -45,10 +45,12 @@ https://bit.ly/2DOtxXB
 {% endcapture %}
 {% include elements/carousel.html %}
 
-``` json
-  {% capture carousel_images %}
-  https://bit.ly/2BBbVhc
-  https://bit.ly/2DOtxXB
-  {% endcapture %}
-  {% include elements/carousel.html %}
+``` 
+{% raw %}
+{% capture carousel_images %}
+https://bit.ly/2BBbVhc
+https://bit.ly/2DOtxXB
+{% endcapture %}
+{% include elements/carousel.html %}
+{% endraw %}
 ```
