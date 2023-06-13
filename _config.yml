@@ -1,7 +1,7 @@
 ### Site Settings ###
 title               : 프론트엔드 하지마루요~
 description         : >-
-                      :slightly_smiling_face: 프론트엔드 공부 기록 블로그 :desktop_computer::sparkling_heart:
+                      프론트엔드 공부 기록 블로그 :desktop_computer::sparkling_heart:
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : Yamtto03122/yamtto03122.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : Yamtto03122/yamtto03122.github.io
