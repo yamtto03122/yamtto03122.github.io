@@ -8,7 +8,6 @@ toc: true
 toc_sticky: true
 date: 2023-06-13
 last_modified_at: 2023-06-13
-render_with_liquid: false
 ---
 
 출처: [Nikhil Thota](https://medium.com/@nikhilthota/digital-minimalism-ac083064b4e4)
