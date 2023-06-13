@@ -26,7 +26,7 @@ last_modified_at: 2023-06-13
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 
 ```
-{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
+{% raw %}{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}{% endraw %}
 ```
 
 ## 3. Figures
