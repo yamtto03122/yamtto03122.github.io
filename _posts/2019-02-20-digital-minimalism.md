@@ -46,9 +46,13 @@ https://bit.ly/2DOtxXB
 {% include elements/carousel.html %}
 
 ``` python
+<pre>
+<code>
 {% capture carousel_images %}
 https://bit.ly/2BBbVhc
 https://bit.ly/2DOtxXB
 {% endcapture %}
 {% include elements/carousel.html %}
+</code>
+<pre>
 ```
