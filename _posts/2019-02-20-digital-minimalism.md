@@ -4,6 +4,10 @@ tags: [프론트엔드, 공부, 블로그]
 style: 
 color: 
 description: 실험용이라노.
+toc: true
+toc_sticky: true
+date: 2023-06-13
+last_modified_at: 2023-06-13
 ---
 
 출처: [Nikhil Thota](https://medium.com/@nikhilthota/digital-minimalism-ac083064b4e4)
@@ -21,13 +25,17 @@ description: 실험용이라노.
 
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 
-```{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}```
+```
+{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
+```
 
 ## 3. Figures
 
-![alt text](https://bit.ly/2TOsM7B "Building Image")![alt text](https://bit.ly/2TOsM7B "Building Image")
+![alt text](https://bit.ly/2TOsM7B "Building Image")
 
-```![alt text](https://bit.ly/2TOsM7B "Building Image")```
+```
+![alt text](https://bit.ly/2TOsM7B "Building Image")
+```
 
 ## 4. Carousel
 
@@ -37,8 +45,10 @@ https://bit.ly/2DOtxXB
 {% endcapture %}
 {% include elements/carousel.html %}
 
-```{% capture carousel_images %}
+```
+{% capture carousel_images %}
 https://bit.ly/2BBbVhc
 https://bit.ly/2DOtxXB
 {% endcapture %}
-{% include elements/carousel.html %}```
+{% include elements/carousel.html %}
+```
