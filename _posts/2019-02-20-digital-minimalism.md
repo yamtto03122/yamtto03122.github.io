@@ -25,7 +25,7 @@ last_modified_at: 2023-06-13
 
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 
-```
+``` python
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 ```
 
@@ -45,7 +45,7 @@ https://bit.ly/2DOtxXB
 {% endcapture %}
 {% include elements/carousel.html %}
 
-```
+``` python
 {% capture carousel_images %}
 https://bit.ly/2BBbVhc
 https://bit.ly/2DOtxXB
