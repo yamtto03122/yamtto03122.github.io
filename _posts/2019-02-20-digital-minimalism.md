@@ -21,15 +21,13 @@ description: 실험용이라노.
 
 {% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
 
-```{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}
-```
+```{% include elements/figure.html image="https://bit.ly/2N69TKO" caption="The Ocean" %}```
 
 ## 3. Figures
 
 ![alt text](https://bit.ly/2TOsM7B "Building Image")![alt text](https://bit.ly/2TOsM7B "Building Image")
 
-```![alt text](https://bit.ly/2TOsM7B "Building Image")
-```
+```![alt text](https://bit.ly/2TOsM7B "Building Image")```
 
 ## 4. Carousel
 
@@ -43,10 +41,4 @@ https://bit.ly/2DOtxXB
 https://bit.ly/2BBbVhc
 https://bit.ly/2DOtxXB
 {% endcapture %}
-{% include elements/carousel.html %}
-```
-
-
-Minimalism isn’t a philosophy that demands you to sell everything you own, wear the same outfit for the rest of your life, and live out of your van. Rather, it’s taking a hard look at everything in your life and determining whether something truly provides happiness for you. Digital Minimalism is a subset of this way of thinking and is a philosophy that has allowed me to work in tech and be an active participant of social media, but also maintain my own level of free thinking and choose what I focus on.
-
-I hope this has helped at least one person out there better manage their digital engagement. When I was first starting my foray into this way of thinking, this documentary by Matt D'Avella really helped me understand what minimalism was all about and is something I’d recommend if you’d like to learn more!
+{% include elements/carousel.html %}```
