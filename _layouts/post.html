@@ -1,9 +1,11 @@
 ---
 layout: page
+{{ content | toc }} 
 ---
 <html lang="ko">
+  
   <h1><b>{{ page.title }}</b></h1>
-  {{ post.content | toc }} 
+  
   <p class="post-metadata text-muted">
     {{ page.date | date_to_long_string }} -  
     <b>
