@@ -106,3 +106,7 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+
+toc: true
+toc_sticky: true
