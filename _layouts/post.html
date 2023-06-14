@@ -2,7 +2,9 @@
 layout: page
 ---
 <html lang="ko">
-  {{ content | toc }} 
+  <aside>
+    {% include toc.html html=content %}   
+  </aside>
   <h1><b>{{ page.title }}</b></h1>
   
   <p class="post-metadata text-muted">
