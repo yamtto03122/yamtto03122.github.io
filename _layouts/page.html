@@ -1,12 +1,9 @@
 ---
 layout: default
-{{ content | toc }} 
+toc: true
 ---
 
 <div class="col-lg-10 mx-auto mt-5 markdown-body">
-  
+  {{ content | toc }} 
   {{ content }}
-  <aside>
-    {% include toc.html html=content %}   
-  </aside>
 </div>
