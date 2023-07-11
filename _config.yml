@@ -49,6 +49,7 @@ author:
 
 ### Posts ###
 permalink: /blog/:title
+futrue: true
 
 
 ### Collections ###
