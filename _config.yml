@@ -98,8 +98,9 @@ defaults:
       layout: "element"                                 # For Documentation Only
   - scope:
       path: ""
-      type: "posts"
+      type: "blog"
     values:
+      layout: "post"
       comments: false                                   # Set to true to enable disqus comments
 
 
