@@ -1,12 +1,15 @@
 ---
 layout: page
 ---
-<article class="post-article">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+<div class="post-title">
+  <article class="post-article">
   <div class="toc">
-    <a href="#">&lt;맨 위로&gt;</a>
     {% include toc.html html=content %}
   </div>
 </article>
+</div>
+
 
   <h1><b>{{ page.title }}</b></h1>
  
@@ -44,7 +47,6 @@ layout: page
   </div>
   {% endif %}
 </html>
-
 
 
 <script>

@@ -6,8 +6,8 @@ export function toc() {
       contentSelector: '.post-content',
       ignoreSelector: '[data-toc-skip]',
       headingSelector: 'h2, h3',
-      orderedList: false,
-      scrollSmooth: false
+      orderedList: true,
+      scrollSmooth: true
     });
   }
 }
