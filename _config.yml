@@ -3,8 +3,8 @@ title               : 프론트엔드 하지메루요~
 description         : >-
                       프론트엔드 공부 기록 블로그 :desktop_computer::sparkling_heart:
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
-repository          : Yamtto03122/yamtto03122.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
-remote_theme        : Yamtto03122/yamtto03122.github.io
+repository          : yamtto03122/yamtto03122.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+remote_theme        : yamtto03122/yamtto03122.github.io
 open_new_tab        : false                             # Opens external URLs in new tab (works for posts, projects and navbar only)
 
 
