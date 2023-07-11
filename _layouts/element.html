@@ -1,7 +1,7 @@
 {% assign page_title = page.title | slice: 2, page.title.size %}
 <h2 id="{{ page_title | slugify }}">{{ page_title }}</h2>
-
 {%- assign code = content | strip -%}
+
 
 {%- if code contains '{% ' -%}
 
