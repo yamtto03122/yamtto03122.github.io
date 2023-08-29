@@ -60,7 +60,7 @@ layout: page
   function getHeaderNodes(master) {
     var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);
     var headerNodes = nodes.filter(function(elem) {
-        return elem.tagName == "H1" || elem.tagName == "H2" || elem.tagName == "H3" || elem.tagName == "H4" || elem.tagName == "H5" || elem.tagName == "H6";
+        return elem.tagName == "H1" || elem.tagName == "H2" || elem.tagName == "H3" || elem.tagName == "H4";
     });
     return headerNodes;
   }
