@@ -1,6 +1,6 @@
 ---
-title: useState
-tags: [react, basic, hook]
+title: useState와 prev
+tags: [react, basic, hook, useState, state, prev]
 style: strok
 color: primary
 description: React Hooks - useState
@@ -47,7 +47,78 @@ state값이 변경되면 useState가 변경을 감지하고, 자식 컴포넌트
 
 <br><br>
 
-#### 3️⃣ 연습하기
+#### 3️⃣ state prev??
+
+> prev는 세터함수의 이전 상태값을 의미한다.
+
+즉, 'setState'를 호출하기 이전 'state'의 값이 'prev'에 들어간다.
+
+변수를 useState로 담게 되면 state는 함수가 끝날때 <u>마지막으로 선언된 값을 가져온다.</u>
+
+```jsx
+import { useState } from "react";
+
+function PrevEx() {
+  const [state, setState] = useState(0);
+
+  function onClick() {
+    setState(state + 2);
+    setState(state + 2);
+  }
+
+  return (
+    <>
+      <div>결과 : {state}</div>
+      <button onClick={onClick}>CLICK!</button>
+    </>
+  );
+}
+export default PrevEx;
+```
+
+위와 같이 선언 할 경우 마지막을 제외한 결과 값들은 임시 저장공간에 저장만 되며,
+
+버튼을 클릭했을때 결국에는 마지막의 +2만 적용된다.
+
+이는 state의 원리와 관련있는데, state가 바뀌면 state를 사용하는 컴포넌트가 다시 만들어지고, 이를 리렌더링이라고 한다.
+
+state가 event나 다른 것에 의해 변경될 때 마다 리렌더링을 하면 처리해야하는 정보량이 너무 많아지기 때문에
+
+react에선 그 정보를 임시메모리에 담아놨다가 함수가 끝나면 한 번에 처리 후 렌더링한다. 
+
+<br>
+
+그러나 <b>prev를 사용하게되면 임시공간에 저장한 값을 버리지 않게 된다!!</b>
+
+```jsx
+import { useState } from "react";
+
+function Prev() {
+  const [state, setState] = useState(0);
+
+  function onClick() {
+    setState((prev) => prev + 1);
+    setState((prev) => prev + 2);
+    setState((prev) => prev + 3);
+    setState((prev) => prev + 4);
+    setState((prev) => prev + 5);
+  }
+
+  return (
+    <>
+      <div>결과 : {state}</div>
+      <button onClick={onClick}>CLICK!</button>
+    </>
+  );
+}
+export default Prev;
+```
+
+위처럼 하면, 버튼을 클릭 할 때 마다 1+2+3+4+5 가 순차적으로 되어 15라는 값이 나오게 된다.
+
+<br><br>
+
+#### 4️⃣ 연습하기
 
 <br>
 

@@ -182,116 +182,99 @@ export default Effect;
 
 <br>
 
-##### <b style="color:#007bff;">[ 1. input태그 하나일 경우 ]</b> 
+##### <b style="color:#007bff;">[ 1. p값만 업데이트 되는 버튼 (콘솔x) ]</b> 
 
 <br>
 
-* 로직 : input값에 따라 변하는 메시지 
+* 로직 : 버튼을 누르면 결과값의 *2 
 
-1. useState로 message 관리 : 초기값 설정,  세터함수(setMessage) 선언 
+1. useState로 초기값 설정 : 초기값 설정(2),  세터함수(setMessage) 선언 
 
-2. event 로 발생한 value 값을 Message에 대입해서 state를 갱신하기  
+2. button 클릭 시 onClick 이벤트에 실행할 내용 부여 (setNum에 변화값 주기) 
 
-3. 초기화 버튼 누르면 리셋                                         
+3. 콘솔에는 한개의 값만 찍힐 것                                         
 
 <br>
 
 ```jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-function UseState() {
+function Effect(){
+   
+    const [num, setNum] = useState(2);
 
-    const [message, setMessage] = useState(''); 
-
-    const onChange = (e) => {
-        setMessage(e.target.value);
-
+    const onClick = () =>{
+        setNum(num * 2);
     }
+    useEffect(()=>{
+        console.log(num)
+    },[])
 
-    const reset = () => { //초기화
-        setMessage('');
-    }
-
-
-    return (
+    return(
         <div>
-            <h2>MESSAGE</h2>
-            <input onChange={onChange} value={message}/>
-            <p>내용 : {message}</p>
-            <button onClick={reset}>RESET</button>
+            <p>{num}</p>
+            <button onClick={onClick}>CLICK!</button>
         </div>
-    );
+    )
 }
 
-export default UseState;
+export default Effect;
 ```
 
 <br>
 
 ##### 🔍 결과
-<img src="https://github.com/yamtto03122/yamtto03122.github.io/assets/134922108/0a0a576d-a153-4531-b979-6120fe3135a8" style= "height:400px; margin:1em 0;">
+<img src="https://github.com/yamtto03122/yamtto03122.github.io/assets/134922108/e41dbc6c-7562-4bc6-a691-9990f24dc24e" style= "height:400px; margin:1em 0;">
 
 
-input창에 입력한 텍스트가 p태그로 나타나고, RESET버튼을 누르면 p태그와 input value 모두 초기화가 되었다.
+`useEffect`의 `deps`를 빈 배열 `[]`로 하면, 콘솔 로그 값에는 num의 기본값이 바뀌지 않고
+
+도큐멘트 상에서의 p 값만 바뀌는걸 확인할 수 있다.
 
 <br><br>
 
-##### <b style="color:#007bff;">[ 2. input태그가 여러 개일 경우 ]</b> 
+##### <b style="color:#007bff;">[ 2. 카운트다운 만들기 ]</b> 
 
 <br>
 
-* 로직 : input값에 따라 변하는 메시지 
+* 로직
 
-1. 각 태그에 name값 설정
+1. useState에 초기 시간을 설정하고 useEffect로 시간을 차감(setInterval)
 
-2. useState 객체형태로 받아오게하기                                 
+2. 0이 되면 카운트(setInterval)가 멈추도록 설정                             
 
 <br>
 
 ```jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function UseState() {
+function UseEffect() {
+    const [sec, setSec] = useState(10); //카운트다운될 숫자 초기값 설정
 
-    const reset = () => { //초기화
-        setInfo({
-            names : '',
-            age : '',
-            address : ''
-        })
-    }
+    useEffect(()=>{
+        const countDown = () => { //변수를 만들어서 setInterval에 대입
+            if(sec > 0){ //만약 sec > 0 이라면
+                setSec(sec-1); //setSec값에 sec-1값을 대입해줘라
+            }else if(sec == 0){ //또는, sec가 0이 되면
+                setSec('성공!'); //setSec값에 문자열 '성공!'을 대입해라.
+            }
+        }
 
-    const [info, setInfo] = useState({
-        names : '',
-        age : '',
-        address : ''
-    });
+        const timer = setInterval(countDown, 1000); //1초마다 카운트다운을 돌려줌
 
-    const {names, age, address} = info; //객체를 구조분해할당을 해준 것
-
-    const onChange = (e) => {
-        const { value, name } = e.target;
-        setInfo({...info, [name] : value});
-        console.log(info)
-    }
+        return ()=>{
+            clearInterval(timer);
+        }
+    },[sec]); //sec의 값이 바뀔 때 마다 바뀌도록 useEffect 설정
 
     return (
         <div>
-            <div>
-                <h2>Introduction</h2>
-                <input name="names" placeholder="이름" onChange={onChange} value={names}/>
-                <input placeholder='나이' onChange={onChange}  name="age"  value={age}/>
-                <input placeholder='거주 지역' onChange={onChange}  name="address"  value={address}/>
-                <p>이름 : {names}, 나이 : {age}, 거주지 : {address}</p>
-            </div>
-
-            <button onClick={reset}>RESET</button>
+            <p>{sec}</p>     
         </div>
-        
     );
 }
 
-export default UseState;
+export default UseEffect;
 ```
 
 <br>
@@ -299,33 +282,7 @@ export default UseState;
 
 ##### 🔍 결과
 
-<img src="https://github.com/yamtto03122/yamtto03122.github.io/assets/134922108/76ec273f-3555-415f-a960-29ee37d64fba" style= "height:300px; margin:1em 0;">
+<img src="https://github.com/yamtto03122/yamtto03122.github.io/assets/134922108/8c717dba-9db9-4257-ba71-70ca480b98ec" style= "height:300px; margin:1em 0;">
 
 
-<br>
-
-```jsx 
-const onChange = (e) => {
-        const { value, name } = e.target;
-        setInfo({...info, [name] : value});
-        console.log(info)
-    }
-```
-
-> 리액트에서는 객체를 변경할때 꼭 <u>원본을 복사하고 그 뒤에 변경할 값을 덮어쓰는 방식</u>을 써야하므로<br>
-`...(스프레드 문법)`을 통해서 원본 객체인 info를 <b>복사</b>해준 다음에<br>
-위에 변수로 선언한 name을 key값으로 넣어준다.
-
-<br>
-
-[대괄호]를 통해서 키값을 적어주는 것은 <u>변수를 선언하고 그 실제값을 불러오기 위해서 사용하는 것이다.</u> 
-
-따라서 `e.target.name`이 키값으로 들어간 것은 `<input name="names">` 이므로, key값으로 "names"가 들어갈 것이다.
-
-즉, {% include elements/highlight.html text="이벤트의 타깃인 input의 안에 있는 name이 무엇인가? 그 name에 들어간 값을 키값으로 사용하라" %}라는 의미이다.
-
-여기서는 name안에 "names"이라는 값이 들어가 있기 때문에 
-
-inputs안에서 "names"이라는 key를 찾고 그것의 value값을 새롭게 들어오는 값으로 변경을 해준다.
-
-<br>
+<br><br>
